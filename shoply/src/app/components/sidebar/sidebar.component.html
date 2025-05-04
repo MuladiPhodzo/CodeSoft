@@ -1,0 +1,73 @@
+<div>
+  <section class="sidebar">
+    <div class="sidebar-header">
+      <h1 class="title">Shop by category</h1>
+    </div>
+    <div class="search-box">
+      <input type="text" placeholder="filter" />
+      <button class="filter-btn"><i class="fa fa-fw fa-filter"></i></button>
+    </div>
+    <nav class="sidebar-nav">
+      <ul class="nav-list">
+        <li>
+          <button (click)="toggle('category')">Category</button>
+          <ul *ngIf="expanded.category">
+            <li><a routerLink="/home">Sneakers</a></li>
+            <li><a routerLink="/home">Boots</a></li>
+            <li><a routerLink="/home">Sandals</a></li>
+          </ul>
+        </li>
+
+        <li>
+          <button (click)="toggle('color')">Color</button>
+          <ul *ngIf="expanded.color">
+            <li><a routerLink="/cart">Red</a></li>
+            <li><a routerLink="/cart">Blue</a></li>
+            <li><a routerLink="/cart">Black</a></li>
+          </ul>
+        </li>
+
+        <li>
+          <button (click)="toggle('material')">Material</button>
+          <ul *ngIf="expanded.material">
+            <li><a routerLink="/favourites">Leather</a></li>
+            <li><a routerLink="/favourites">Canvas</a></li>
+          </ul>
+        </li>
+
+        <li>
+          <button (click)="toggle('size')">Size</button>
+          <ul *ngIf="expanded.size">
+            <li><a routerLink="/about">Small</a></li>
+            <li><a routerLink="/about">Medium</a></li>
+            <li><a routerLink="/about">Large</a></li>
+          </ul>
+        </li>
+
+        <li>
+          <button (click)="toggle('price')">Price</button>
+          <ul *ngIf="expanded.price">
+            <li><a routerLink="/profile">Under $50</a></li>
+            <li><a routerLink="/profile">$50 - $100</a></li>
+            <li><a routerLink="/profile">Above $100</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <div class="sidebar-footer">
+      <p>&copy; 2025 Shoply. All rights reserved.</p>
+      <p>
+        <a href=""><i></i>Privacy Policy </a> 
+        |
+        <a href=""><i></i>Terms of Service</a> 
+      </p>
+      <p>Follow us on:</p>
+      <ul class="social-icons">
+        <li><a href="#"><i class="fa fa-fw fa-facebook"></i></a></li>
+        <li><a href="#"><i class="fa fa-fw fa-twitter"></i></a></li>
+        <li><a href="#"><i class="fa fa-fw fa-instagram"></i></a></li>
+        <li><a href="#"><i class="fa fa-fw fa-pinterest"></i></a></li>
+      </ul>
+    </div>
+  </section>
+</div>

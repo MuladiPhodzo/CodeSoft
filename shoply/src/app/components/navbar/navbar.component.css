@@ -1,0 +1,135 @@
+.nav-bar {
+  background-color: black;
+  color: black;
+  position: sticky;
+  z-index: 100;
+  height: auto;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 5%;
+  overflow: hidden;
+}
+
+.nav-bar a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.5rem;
+  margin-right: 2rem;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  justify-content:flex-start;
+
+}
+.title {
+  font-size: 40px;            /* Adjust size as needed */
+  font-weight: 700;           /* Semi-bold */
+  color: white;               /* Matches dark nav background */
+  letter-spacing: 2px;        /* Slight spacing between letters */
+  margin: 0;                  /* Remove default h4 margin */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font */
+}
+
+.title .highlight {
+  color: #FFD700; /* bright yellow */
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  padding-top: 5%;
+  height: 30px;
+  border-radius: 25px;
+  padding: 10px;
+  width: 400px;
+  transition: border-color 0.3s ease;
+}
+
+.search-box input {
+  flex: 1;
+  float: right;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  padding: 10px;
+  border: none;
+  font-size: 17px;
+}
+
+.nav-bar button {
+  padding: 10px;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  cursor: pointer;
+  background-color: #f0f0f0;
+  border: none;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.search-btn:hover {
+  color: #000;
+}
+
+.nav-icons {
+  display: flex;
+  align-items: center;
+}
+
+.icons {
+  justify-content: center;
+  align-items:flex-end;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  color: black;
+}
+
+.icons li {
+
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icons li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background-color: #333;     /* dark background */
+  color: white;
+  font-size: 18px;
+  border-radius: 50%;         /* makes it circular */
+  transition: background 0.3s, transform 0.3s;
+  text-decoration: none;
+}
+
+.icons li a:hover {
+  background-color: #FFD700;  /* yellow on hover */
+  color: black;
+  transform: scale(1.1);
+}
+
+.icons :hover {
+  color: black; /* bright yellow */
+}
+
+mat-menu {
+  min-width: 150px;
+}
+
+button[mat-menu-item] {
+  display: flex;
+  justify-content: center;
+}
+
+mat-icon {
+  margin-right: 8px;
+  color: black;
+}

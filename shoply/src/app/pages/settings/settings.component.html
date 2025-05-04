@@ -1,0 +1,39 @@
+<mat-card>
+  <h2>Account Settings</h2>
+
+  <!-- Profile Info Section -->
+  <form [formGroup]="settingsForm" (ngSubmit)="onSave()">
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Full Name</mat-label>
+      <input matInput formControlName="fullName">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Email</mat-label>
+      <input matInput type="email" formControlName="email">
+    </mat-form-field>
+
+    <!-- Password Section -->
+    <h3>Change Password</h3>
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>New Password</mat-label>
+      <input matInput type="password" formControlName="newPassword">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Confirm Password</mat-label>
+      <input matInput type="password" formControlName="confirmPassword">
+    </mat-form-field>
+
+    <!-- Preferences -->
+    <h3>Preferences</h3>
+    <mat-slide-toggle formControlName="notifications">
+      Enable Notifications
+    </mat-slide-toggle>
+
+    <br><br>
+    <button mat-raised-button color="primary" type="submit" [disabled]="settingsForm.invalid">
+      Save Changes
+    </button>
+  </form>
+</mat-card>

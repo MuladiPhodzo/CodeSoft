@@ -1,0 +1,64 @@
+/* The side navigation menu */
+.sidebar {
+  margin: 0;
+  padding: 20px;
+  width: 250px;
+  background-color: #ededed;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+.sidebar-nav .nav-list > li {
+  margin-bottom: 10px;
+}
+
+.sidebar-nav button {
+  background: none;
+  border: none;
+  color: black;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+}
+
+.sidebar-nav ul ul {
+  margin-left: 15px;
+  padding-left: 10px;
+  border-left: 2px solid #ddd;
+}
+
+.sidebar-nav ul ul li {
+  margin: 5px 0;
+  size: 50px;
+}
+
+.social-icons {
+  position: fixed;
+  list-style: none;
+  gap: 20px;
+  size: 50px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+/* On screens that are less than 700px wide, make the sidebar into a topbar */
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+}
+
+/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+}
