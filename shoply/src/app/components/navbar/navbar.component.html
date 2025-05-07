@@ -21,9 +21,13 @@
         <li><a routerLink="/favourites"><i class="fa fa-fw fa-heart"></i></a></li>
         <li><a routerLink="/about"><i class="fa fa-fw fa-globe"></i></a></li>
         <li>
-          <button mat-icon-button [matMenuTriggerFor]="profileMenu">
-            <mat-icon>account_circle</mat-icon>
-          </button>
+          <a
+            class="profile-link"
+            [matMenuTriggerFor]="profileMenu"
+            aria-label="Profile Menu"
+          >
+            <i class="fa fa-fw fa-user"></i>
+          </a>
         
           <mat-menu #profileMenu="matMenu">
             <button mat-menu-item [routerLink]="'/profile'">
@@ -40,6 +44,7 @@
             </button>
           </mat-menu>
         </li>
+        
       </ul>
     </div>
   </nav>

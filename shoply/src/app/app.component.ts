@@ -5,7 +5,7 @@ import { SidebarComponent } from "./components/sidebar/sidebar.component";
 import { ShoppingPanelComponent } from './components/shopping-panel/shopping-panel.component';
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NavbarComponent, SidebarComponent, ShoppingPanelComponent],
+  imports: [RouterOutlet, NavbarComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

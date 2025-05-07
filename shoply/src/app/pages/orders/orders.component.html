@@ -1,1 +1,36 @@
-<p>orders works!</p>
+<div class="orders-page">
+  <div class="orders-header">
+    <h2>Your Orders</h2>
+    <p>Review your recent purchases and order statuses.</p>
+  </div>
+
+  <div class="order-list">
+    <div class="order-card" *ngFor="let order of orders">
+      <div class="order-info">
+        <div>
+          <h4>Order #{{ order.id }}</h4>
+          <p>Date: {{ order.date }}</p>
+        </div>
+        <span class="status" [ngClass]="order.status.toLowerCase()">
+          {{ order.status }}
+        </span>
+      </div>
+
+      <div class="order-items">
+        <div *ngFor="let item of order.items" class="item">
+          <img [src]="item.image" alt="Product Image" />
+          <div>
+            <h5>{{ item.name }}</h5>
+            <p>Qty: {{ item.quantity }}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="order-footer">
+        <span>Total: <strong>${{ order.total }}</strong></span>
+        <button class="btn-view">View Details</button>
+      </div>
+    </div>
+  </div>
+</div>
+
