@@ -1,0 +1,33 @@
+<mat-card class="section-header">
+  <h2>the Shop</h2>
+</mat-card>
+
+<div class="grid">
+  <mat-card *ngFor="let product of products" class="product-card" appearance="outlined">
+    <img class="prod-img" mat-card-image [src]="product.image" [alt]="product.name">
+    <mat-card-title>{{ product.name }}</mat-card-title>
+    <mat-card-subtitle>{{ product.class }}</mat-card-subtitle>
+    <mat-card-content>
+      <div class="content">
+        <p><strong>S:</strong> {{ product.size }}</p>
+        <p><strong>R</strong> {{ product.price }}</p>
+        <p><strong>Stock:</strong> {{ product.count }}</p>
+      </div>
+    
+      <div class="flags-buttons-row">
+        <div class="flags">
+          <span *ngFor="let flag of product.flags" class="flag">{{ flag }}</span>
+        </div>
+    
+        <div class="btn-div">
+          <button mat-mini-fab color="yellow" aria-label="Add to cart" class="cart-btn">
+            <i class="fa fa-shopping-cart"></i>
+          </button>
+          <button mat-mini-fab color="warn" aria-label="Add to favorites" class="fav-btn">
+            <i class="fa fa-heart"></i>
+          </button>
+        </div>
+      </div>
+    </mat-card-content>    
+  </mat-card>
+</div>

@@ -1,0 +1,48 @@
+mat-card {
+  max-width: 600px;
+  margin: 3rem auto;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  background-color: #ffffff;
+}
+
+h2 {
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #3f51b5;
+}
+
+h3 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #666;
+  font-size: 1.2rem;
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+mat-slide-toggle {
+  margin-top: 1rem;
+  color: #3f51b5;
+}
+
+button[type="submit"] {
+  display: block;
+  margin: 2rem auto 0;
+  padding: 0.5rem 2rem;
+  font-weight: bold;
+}
+
+:host {
+  display: block;
+  background: linear-gradient(to bottom right, #e3f2fd, #ffffff);
+  min-height: 100vh;
+  padding: 2rem;
+}
+

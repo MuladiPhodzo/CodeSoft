@@ -1,24 +1,26 @@
 <app-sidebar></app-sidebar>
 <div class="home-container">
-  <section class="hero">
-    <h1>Welcome to <span class="highlight">Shoply</span></h1>
+  <section class="hero">  
+    <h2>Welcome to</h2>
+    <h1 class="title">Shopl<span class="highlight">y</span></h1>
     <p>Your one-stop shop for stylish footwear</p>
-    <button mat-raised-button color="primary" routerLink="/product">Shop Now</button>
+    <button mat-raised-button class="shop-btn" [routerLink]="'/shopping'">Shop Now</button>
   </section>
 
   <section class="features">
     <div class="feature-card">
-      <mat-icon>local_shipping</mat-icon>
+      <mat-icon class="icon">local_shipping</mat-icon>
       <h3>Free Delivery</h3>
       <p>On all orders over $50</p>
     </div>
+
     <div class="feature-card">
-      <mat-icon>verified</mat-icon>
+      <mat-icon class="icon">verified</mat-icon>
       <h3>Quality Assured</h3>
       <p>Only trusted brands</p>
     </div>
     <div class="feature-card">
-      <mat-icon>support_agent</mat-icon>
+      <mat-icon class="icon">support_agent</mat-icon>
       <h3>24/7 Support</h3>
       <p>We’re here to help you</p>
     </div>

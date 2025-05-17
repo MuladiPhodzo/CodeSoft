@@ -4,6 +4,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { User } from '../../services/login.service'
 
 @Component({
   selector: 'app-settings',
@@ -20,6 +21,7 @@ import { MatCardModule } from '@angular/material/card';
 export class SettingsComponent {
 
   settingsForm: FormGroup;
+  user!: User
 
   constructor(private fb: FormBuilder) {
     this.settingsForm = this.fb.group({
@@ -34,6 +36,12 @@ export class SettingsComponent {
   onSave() {
     if (this.settingsForm.value.newPassword !== this.settingsForm.value.confirmPassword) {
       alert('Passwords do not match!');
+      const {fullName, email, newPassword} = this.settingsForm.value
+      this.user = {
+        name: fullName,
+        email: email,
+        password: newPassword
+      }
       return;
     }
 

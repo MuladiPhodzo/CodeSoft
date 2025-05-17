@@ -1,32 +1,38 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 // import { RouterOutlet } from '@angular/router';
-import { NavbarComponent } from "../../components/navbar/navbar.component";
-
+import { CommonModule } from '@angular/common';
+import { MatCardModule } from '@angular/material/card';
+import { ShippingService, Delivery } from '../../services/shipping.service'
+import { User, LoginService } from '../../services/login.service'
+import { ProductService } from '../../services/product.service';
 @Component({
   selector: 'app-profile',
-  imports: [],
+  imports: [CommonModule, MatCardModule],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.css'
 })
-export class ProfileComponent {
-  // Add any properties or methods needed for the profile component here
-  user = {
-    name: 'John Doe',
-    email: 'jon.doe@gmail.com',
-    phone: '+1234567890',
+export class ProfileComponent implements OnInit {
+
+  constructor(
+    private shipping: ShippingService,
+    private login: LoginService,
+    private product: ProductService
+  ){}
+  user!: User
+  delivery: any = {}
+  orders: Delivery[] = []
+  
+  ngOnInit(): void {
+    this.orders = this.shipping.getDeliveries(); // for synchronous
+    this.user = this.login.getUser()
   }
-  orders = [
-    { id: 1, date: '2023-10-01', total: 100 },
-    { id: 2, date: '2023-10-02', total: 200 },
-    { id: 3, date: '2023-10-03', total: 300 },
-  ];
-  // Add any methods to handle user actions, like updating profile or viewing orders
   updateProfile() {
     // Logic to update user profile
     console.log('Profile updated:', this.user);
   }
   viewOrder(orderId: number) {
-    // Logic to view order details
-    console.log('Viewing order:', orderId);
+
+    this.delivery = this.product.getProdById(orderId)
+    console.log('Viewing order:', this.delivery);
   }
 }
